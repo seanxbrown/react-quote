@@ -43,7 +43,7 @@ function App() {
         <Button type="button" onClick={getRandomQuote}>Random Quote</Button>
       </Form>
       <DisplayQuote author={currentQuote.author} quote={currentQuote.content} tags={currentQuote.tags} id={currentQuote._id} onSave={saveQuote}></DisplayQuote>
-      <SavedQuotes></SavedQuotes>
+      <SavedQuotes listOfSavedQuotes={quotesList}></SavedQuotes>
     </div>
   );
 }

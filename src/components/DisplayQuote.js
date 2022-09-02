@@ -3,8 +3,8 @@ import Button from "react-bootstrap/Button"
 export const DisplayQuote = ({author, quote, tags, id, onSave}) => {
     return (
         <div>
-            <h2>{author}</h2>
-            <p>{quote}</p>
+            <h2>{quote}</h2>
+            <p>{author}</p>
             <p>{id}</p>
             {tags.map(tag => {
                 return <p key={Date.now() * Math.random()}> {tag} </p>

@@ -17,18 +17,9 @@ function App() {
     const response = await fetch("https://api.quotable.io/random", {mode: "cors"})
     const quote = await response.json();
     setCurrentQuote(quote)
+    console.log(currentQuote)
 
   }
-
-  async function callAPI() {
-
-    const response = await fetch("https://api.quotable.io/random?author=Barack Obama", {mode: "cors"})
-    console.log(response)
-    const quotes = await response.json()
-    console.log(quotes)
-
-  }
-
 
   return (
     <div className="App">
@@ -39,10 +30,10 @@ function App() {
           <Form.Control type="text" placeholder="e.g. Albert Einstein"></Form.Control>
         </Form.Group>
         <Button type="submit">Search</Button>
-        <Button type="button" onClick={callAPI}>Random Quote</Button>
+        <Button type="button" onClick={getRandomQuote}>Random Quote</Button>
 
       </Form>
-      <DisplayQuote quote={currentQuote}></DisplayQuote>
+      <DisplayQuote author={currentQuote.author} quote={currentQuote.content} tags={currentQuote.tags} id={currentQuote._id}></DisplayQuote>
       <SavedQuotes></SavedQuotes>
 
       

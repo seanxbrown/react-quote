@@ -9,7 +9,6 @@ import Button from "react-bootstrap/Button";
 
 
 function App() {
-
   const [quotesList, setQuotesList] = useState([]);
   const [currentQuote, setCurrentQuote] = useState({});
 

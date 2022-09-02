@@ -27,6 +27,10 @@ function App() {
     setCurrentQuote(quote);
   }
 
+  function saveQuote() {
+    setQuotesList(quotesList.concat(currentQuote))
+  }
+
   return (
     <div className="App">
       <Header></Header>
@@ -38,7 +42,7 @@ function App() {
         <Button type="submit" onClick={getQuoteFromSpecificPerson}>Get New Quote</Button>
         <Button type="button" onClick={getRandomQuote}>Random Quote</Button>
       </Form>
-      <DisplayQuote author={currentQuote.author} quote={currentQuote.content} tags={currentQuote.tags} id={currentQuote._id}></DisplayQuote>
+      <DisplayQuote author={currentQuote.author} quote={currentQuote.content} tags={currentQuote.tags} id={currentQuote._id} onSave={saveQuote}></DisplayQuote>
       <SavedQuotes></SavedQuotes>
     </div>
   );

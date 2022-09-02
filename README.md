@@ -68,3 +68,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Notes
+
+User calls the api for either a random quote, or a random quote by a specific person. The api response is stored in state and passed down to the display quote section as a prop.
+
+Originally passed quote as whole object down to displayquotes component but that caused issues with using default props, so passed individual attributes down instead. Error encountered when no props passed down to displayquote component. Resolved with use of default props

@@ -1,5 +1,4 @@
 export const DisplayQuote = ({author, quote, tags, id}) => {
-    console.log("from DQ:", tags)
     return (
         <div>
             <h2>{author}</h2>
@@ -14,9 +13,9 @@ export const DisplayQuote = ({author, quote, tags, id}) => {
 }
 
 DisplayQuote.defaultProps = {
-    author: "Author",
-    quote: "Quote",
-    id: 1234,
-    tags: ["Category"]
+    author: "No author found",
+    quote: "No quote found",
+    id: "No ID found",
+    tags: ["No categories found"]
     
 }

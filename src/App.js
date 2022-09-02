@@ -17,8 +17,14 @@ function App() {
     const response = await fetch("https://api.quotable.io/random", {mode: "cors"})
     const quote = await response.json();
     setCurrentQuote(quote)
-    console.log(currentQuote)
+  }
 
+  async function getQuoteFromSpecificPerson(event) {
+    event.preventDefault();
+    const authorName = document.querySelector("#authorInput").value;
+    const response = await fetch(`https://api.quotable.io/random?author=${authorName}`, {mode: "cors"})
+    const quote = await response.json();
+    setCurrentQuote(quote);
   }
 
   return (
@@ -26,17 +32,14 @@ function App() {
       <Header></Header>
       <Form>
         <Form.Group>
-          <Form.Label>Search for an Author</Form.Label>
-          <Form.Control type="text" placeholder="e.g. Albert Einstein"></Form.Control>
+          <Form.Label>Search for a famous figure</Form.Label>
+          <Form.Control id="authorInput" type="text" placeholder="e.g. Albert Einstein"></Form.Control>
         </Form.Group>
-        <Button type="submit">Search</Button>
+        <Button type="submit" onClick={getQuoteFromSpecificPerson}>Get New Quote</Button>
         <Button type="button" onClick={getRandomQuote}>Random Quote</Button>
-
       </Form>
       <DisplayQuote author={currentQuote.author} quote={currentQuote.content} tags={currentQuote.tags} id={currentQuote._id}></DisplayQuote>
       <SavedQuotes></SavedQuotes>
-
-      
     </div>
   );
 }

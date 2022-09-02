@@ -31,6 +31,13 @@ function App() {
     setQuotesList(quotesList.concat(currentQuote))
   }
 
+  function removeQuote(event) {
+    setQuotesList([...quotesList].filter(quote => {
+      return quote._id !== event.target.parentElement.id
+    }))
+
+  }
+
   return (
     <div className="App">
       <Header></Header>
@@ -43,7 +50,7 @@ function App() {
         <Button type="button" onClick={getRandomQuote}>Random Quote</Button>
       </Form>
       <DisplayQuote author={currentQuote.author} quote={currentQuote.content} tags={currentQuote.tags} id={currentQuote._id} onSave={saveQuote}></DisplayQuote>
-      <SavedQuotes listOfSavedQuotes={quotesList}></SavedQuotes>
+      <SavedQuotes listOfSavedQuotes={quotesList} removeQuote={removeQuote}></SavedQuotes>
     </div>
   );
 }

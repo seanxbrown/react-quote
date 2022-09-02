@@ -27,6 +27,15 @@ function App() {
   }
 
   function saveQuote() {
+    //Prevents multiple identical quotes being saved
+
+    for (let i = 0; i < quotesList.length; i++) {
+      if (currentQuote._id === quotesList[i]._id) {
+        alert("Match")
+        return
+      }
+    }
+
     setQuotesList(quotesList.concat(currentQuote))
   }
 

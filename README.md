@@ -76,3 +76,17 @@ User calls the api for either a random quote, or a random quote by a specific pe
 Originally passed quote as whole object down to displayquotes component but that caused issues with using default props, so passed individual attributes down instead. Error encountered when no props passed down to displayquote component. Resolved with use of default props
 
 Next steps: Custom error messages to reduce reliance on browser alerts. Time taken so far ~ 7 hours.
+
+Warning message functionality - getting the box to open and close as necessary. Wasn't saving the prop that was passed down into state. Used one warning object instead of 2 to minimise the amount of state created. Setdisplaywarning on its own caused too many rerenders. Used hook instead. Changed back into message and status combination because couldn't control display status in warningbox component. Resolved by creating a function in the parent component (App) and passing that down to the child component. State maintained in the parent component.
+
+Local storage 1 behind actual quote.
+
+Fixed with the following dataflow:
+
+When the save button is clicked, the array of quotes from state is copied and the new quote is added using the concat method. The new array of quotes (i.e. not the one from state) is passed down into the local storage save function.
+
+The localstorage save function takes the new array of quotes, converts it into JSON and saves it to localstorage with the key "quotesInLocalStorage". The new array is immediately retrieved from localstorage so it can be saved to state and passed down into other components
+
+The getfromlocalstorage function retrieves the new quotes array from localstorage, parses it and saves it to state.
+
+The updated state causes the new array of quotes to be passed down into the savedquotes component and rendered.

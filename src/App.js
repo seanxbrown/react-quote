@@ -13,13 +13,13 @@ import ButtonGroup from "react-bootstrap/ButtonGroup";
 function App() {
   const [quotesList, setQuotesList] = useState([]);
   const [currentQuote, setCurrentQuote] = useState({});
-  const [warningMesage, setWarningMessage] = useState("")
-  const [displayWarningBox, setDisplayWarningBox] = useState(false)
+  const [warningMesage, setWarningMessage] = useState("");
+  const [displayWarningBox, setDisplayWarningBox] = useState(false);
 
   async function getRandomQuote() {
     const response = await fetch("https://api.quotable.io/random", {mode: "cors"});
     const quote = await response.json();
-    setCurrentQuote(quote)
+    setCurrentQuote(quote);
   }
 
   async function getQuoteFromSpecificPerson(event) {
@@ -27,13 +27,10 @@ function App() {
     const authorName = document.querySelector("#authorInput").value;
 
     //Using this search without entering a name is equivalent to a random search. This prevents that redundancy from occurring.
-    
     if (!authorName) {
       setWarningMessage("Please enter a name to use this search, or try a random search");
       setDisplayWarningBox(true);
-
       return
-
     }
 
     const response = await fetch(`https://api.quotable.io/random?author=${authorName}`, {mode: "cors"});
@@ -43,28 +40,26 @@ function App() {
       setWarningMessage("No quotes found for that person.");
       setDisplayWarningBox(true);
       return
+    } else {
+      setCurrentQuote(quote); 
     }
-
-    else { setCurrentQuote(quote); }
   }
 
   function saveQuote() {
-
     //Prevents saving when no author is selected
-    if (!currentQuote.author) {return}
+    if (!currentQuote.author) {
+      return
+    }
 
     //Prevents multiple identical quotes being saved
     for (let i = 0; i < quotesList.length; i++) {
       if (currentQuote._id === quotesList[i]._id) {
         setWarningMessage("Quote already saved.");
         setDisplayWarningBox(true);
-
         return
       }
     }
-
-    //setQuotesList(quotesList.concat(currentQuote));
-    const newSavedQuotesList = [...quotesList].concat(currentQuote)
+    const newSavedQuotesList = [...quotesList].concat(currentQuote);
     saveToLocalStorage(newSavedQuotesList);
     
   }
@@ -75,38 +70,28 @@ function App() {
   }
 
   function getFromLocalStorage() {
-    const quotesFromLocalStorage = JSON.parse(localStorage.getItem("quotesInLocalStorage"));
-    setQuotesList(quotesFromLocalStorage)
+    const quotesFromLocalStorage = JSON.parse( localStorage.getItem("quotesInLocalStorage") );
+    setQuotesList(quotesFromLocalStorage);
     
   }
 
-
   function removeQuote(event) {
-    
     const filteredQuotes = [...quotesList].filter(quote => {
       return quote._id !== event.target.parentElement.id
     });
-
     saveToLocalStorage(filteredQuotes);
-
   }
 
   function closeWarning() {
-
-    setDisplayWarningBox(false);
-    
+    setDisplayWarningBox(false);    
   }
 
   useEffect(() => {
-    const quotesFromLocalStorage = JSON.parse(localStorage.getItem("quotesInLocalStorage"));
-    
+    const quotesFromLocalStorage = JSON.parse( localStorage.getItem("quotesInLocalStorage") );
     if (quotesFromLocalStorage) {
-      setQuotesList(quotesFromLocalStorage)
+      setQuotesList(quotesFromLocalStorage);
     }
-
-    
   }, [])
-
 
   return (
     <Container fluid className="App">

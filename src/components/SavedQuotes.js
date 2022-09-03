@@ -10,7 +10,7 @@ export const SavedQuotes = ({listOfSavedQuotes, removeQuote}) => {
                 return <Carousel.Item key={quote._id} id={quote._id} className="text-center p-5">
                     <p>{quote.content}</p>
                     <p>{quote.author}</p>
-                    {quote.tags.map(tag => {return <p>{tag}</p>})}
+                    {quote.tags.map(tag => {return <p key={Date.Now * Math.random() * 1000}>{tag}</p>})}
                     <CloseButton className="bg-danger float-center" onClick={removeQuote}></CloseButton>
                 </Carousel.Item>
             })}

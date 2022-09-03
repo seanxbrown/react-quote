@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./assets/App.css";
 import {Header} from "./components/Header.js";
@@ -63,8 +63,23 @@ function App() {
       }
     }
 
-    setQuotesList(quotesList.concat(currentQuote));
+    //setQuotesList(quotesList.concat(currentQuote));
+    const newSavedQuotesList = [...quotesList].concat(currentQuote)
+    saveToLocalStorage(newSavedQuotesList);
+    
   }
+
+  function saveToLocalStorage(newSavedQuotesList) {
+    localStorage.setItem("quotesInLocalStorage", JSON.stringify(newSavedQuotesList));
+    getFromLocalStorage();
+  }
+
+  function getFromLocalStorage() {
+    const quotesFromLocalStorage = JSON.parse(localStorage.getItem("quotesInLocalStorage"));
+    setQuotesList(quotesFromLocalStorage)
+    
+  }
+
 
   function removeQuote(event) {
     setQuotesList([...quotesList].filter(quote => {
@@ -78,6 +93,17 @@ function App() {
     setDisplayWarningBox(false);
     
   }
+
+  useEffect(() => {
+    const quotesFromLocalStorage = JSON.parse(localStorage.getItem("quotesInLocalStorage"));
+    
+    if (quotesFromLocalStorage) {
+      setQuotesList(quotesFromLocalStorage)
+    }
+
+    
+  }, [])
+
 
   return (
     <Container fluid className="App">

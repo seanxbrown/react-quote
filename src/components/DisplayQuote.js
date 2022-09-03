@@ -2,16 +2,15 @@ import Button from "react-bootstrap/Button"
 
 export const DisplayQuote = ({author, quote, tags, id, onSave}) => {
     return (
-        <div>
-            <h2>{quote}</h2>
-            <p>{author}</p>
-            <p>{id}</p>
+        <section id="displayQuote" className="text-center mt-2 px-5">
+            <h2 id="QuoteInDisplayQuote" className="fst-italic">"{quote}"</h2>
+            <p id="authorInDisplayQuote" className="text-center">{author}</p>
             {tags.map(tag => {
-                return <p key={Date.now() * Math.random()}> {tag} </p>
+                return <p className="tagFromDisplayQuote text-muted text-end"key={Date.now() * Math.random()}> {tag} </p>
             })}
             <Button type="button" onClick={onSave}>Save</Button>
 
-        </div>
+        </section>
     )
 }
 

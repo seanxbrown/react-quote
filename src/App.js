@@ -6,6 +6,8 @@ import {DisplayQuote} from "./components/DisplayQuote.js";
 import {SavedQuotes} from "./components/SavedQuotes.js";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import ButtonGroup from "react-bootstrap/ButtonGroup";
 
 
 function App() {
@@ -27,6 +29,11 @@ function App() {
   }
 
   function saveQuote() {
+
+    //Prevents saving when no author is selected
+
+    if (!currentQuote.author) {return}
+
     //Prevents multiple identical quotes being saved
 
     for (let i = 0; i < quotesList.length; i++) {
@@ -47,19 +54,22 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <Container fluid className="App">
       <Header></Header>
-      <Form>
+      <Form className="mt-1">
         <Form.Group>
-          <Form.Label>Search for a famous figure</Form.Label>
+          <Form.Label>Search for a famous figure:</Form.Label>
           <Form.Control id="authorInput" type="text" placeholder="e.g. Albert Einstein"></Form.Control>
         </Form.Group>
-        <Button type="submit" onClick={getQuoteFromSpecificPerson}>Get New Quote</Button>
-        <Button type="button" onClick={getRandomQuote}>Random Quote</Button>
+        <ButtonGroup className="d-flex">
+          <Button type="submit" onClick={getQuoteFromSpecificPerson}>Quote Search</Button>
+          <Button type="button" onClick={getRandomQuote}>Random Quote</Button>
+        </ButtonGroup>
+        
       </Form>
       <DisplayQuote author={currentQuote.author} quote={currentQuote.content} tags={currentQuote.tags} id={currentQuote._id} onSave={saveQuote}></DisplayQuote>
       <SavedQuotes listOfSavedQuotes={quotesList} removeQuote={removeQuote}></SavedQuotes>
-    </div>
+    </Container>
   );
 }
 

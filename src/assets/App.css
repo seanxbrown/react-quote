@@ -7,3 +7,41 @@
 #header {
   text-align: center
 }*/
+
+body {
+  background-color: var(--background-colour);
+  color: var(--text-colour)
+}
+
+:root {
+  --background-colour: #12232e;
+  --primary-colour: #007cc7;
+  --secondary-colour: #4da8da;
+  --tertiary-colour: #203647;
+  --text-colour: #eefbfb;
+}
+
+#header {
+  background-color: var(--tertiary-colour)
+}
+h1 {
+  color: var(--text-colour)
+}
+
+button[type = submit], button[type = button] {
+
+  background-color: var(--secondary-colour)
+
+}
+
+.carousel.slide {
+
+  background-color: var(--tertiary-colour);
+  opacity: 80%;
+
+
+}
+
+.carousel-item {
+  border: 2px solid var(--primary-colour)
+}

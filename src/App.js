@@ -25,7 +25,14 @@ function App() {
     const authorName = document.querySelector("#authorInput").value;
     const response = await fetch(`https://api.quotable.io/random?author=${authorName}`, {mode: "cors"})
     const quote = await response.json();
-    setCurrentQuote(quote);
+
+    if (quote.statusCode === 404) {
+      alert("No quotes found for that person.");
+
+      return
+    }
+
+    else { setCurrentQuote(quote); }
   }
 
   function saveQuote() {
@@ -67,8 +74,8 @@ function App() {
         </ButtonGroup>
         
       </Form>
-      <DisplayQuote author={currentQuote.author} quote={currentQuote.content} tags={currentQuote.tags} id={currentQuote._id} onSave={saveQuote}></DisplayQuote>
-      <SavedQuotes listOfSavedQuotes={quotesList} removeQuote={removeQuote}></SavedQuotes>
+      {currentQuote.length > 0 && <DisplayQuote author={currentQuote.author} quote={currentQuote.content} tags={currentQuote.tags} id={currentQuote._id} onSave={saveQuote}></DisplayQuote>}
+      {quotesList.length > 0  && <SavedQuotes listOfSavedQuotes={quotesList} removeQuote={removeQuote}></SavedQuotes> }
     </Container>
   );
 }

@@ -25,6 +25,17 @@ function App() {
   async function getQuoteFromSpecificPerson(event) {
     event.preventDefault();
     const authorName = document.querySelector("#authorInput").value;
+
+    //Using this search without entering a name is equivalent to a random search. This prevents that redundancy from occurring.
+    
+    if (!authorName) {
+      setWarningMessage("Please enter a name to use this search, or try a random search");
+      setDisplayWarningBox(true);
+
+      return
+
+    }
+
     const response = await fetch(`https://api.quotable.io/random?author=${authorName}`, {mode: "cors"});
     const quote = await response.json();
 

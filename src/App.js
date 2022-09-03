@@ -82,9 +82,12 @@ function App() {
 
 
   function removeQuote(event) {
-    setQuotesList([...quotesList].filter(quote => {
+    
+    const filteredQuotes = [...quotesList].filter(quote => {
       return quote._id !== event.target.parentElement.id
-    }))
+    });
+
+    saveToLocalStorage(filteredQuotes);
 
   }
 

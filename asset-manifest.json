@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-quotes/static/css/main.84487ea8.css",
-    "main.js": "/react-quotes/static/js/main.6293b41f.js",
+    "main.css": "/react-quotes/static/css/main.d820b7c3.css",
+    "main.js": "/react-quotes/static/js/main.2dec2e16.js",
     "static/js/787.deed0880.chunk.js": "/react-quotes/static/js/787.deed0880.chunk.js",
     "index.html": "/react-quotes/index.html",
-    "main.84487ea8.css.map": "/react-quotes/static/css/main.84487ea8.css.map",
-    "main.6293b41f.js.map": "/react-quotes/static/js/main.6293b41f.js.map",
+    "main.d820b7c3.css.map": "/react-quotes/static/css/main.d820b7c3.css.map",
+    "main.2dec2e16.js.map": "/react-quotes/static/js/main.2dec2e16.js.map",
     "787.deed0880.chunk.js.map": "/react-quotes/static/js/787.deed0880.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.84487ea8.css",
-    "static/js/main.6293b41f.js"
+    "static/css/main.d820b7c3.css",
+    "static/js/main.2dec2e16.js"
   ]
 }

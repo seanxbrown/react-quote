@@ -1,18 +1,18 @@
 body {
-  background-color: var(--background-colour);
+  background-color: rgba(244, 240, 240, 0.91);
   color: var(--text-colour)
 }
 
 :root {
-  --background-colour: #12232e;
-  --primary-colour: #007cc7;
-  --secondary-colour: #4da8da;
-  --tertiary-colour: #203647;
-  --text-colour: #eefbfb;
+  --background-colour: # ;
+  --primary-colour: #669AB3;
+  --secondary-colour: #FFD1C4;
+  --tertiary-colour: # ;
+  --text-colour: # ;
 }
 
 #header {
-  background-color: var(--tertiary-colour)
+  background-color: var(--primary-colour)
 }
 
 h1 {
@@ -29,5 +29,14 @@ button[type = submit], button[type = button] {
 }
 
 .carousel-item {
-  border: 2px solid var(--primary-colour)
+  background-color: #ABE4FF;
+}
+
+button.btn{
+  border: 0;
+}
+
+#displayQuote {
+  background-color: #ABE4FF;
+  border-radius: 10px;
 }

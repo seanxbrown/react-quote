@@ -9,6 +9,8 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col"
 
 function App() {
   const [quotesList, setQuotesList] = useState([]);
@@ -97,11 +99,12 @@ function App() {
     <Container fluid className="App">
       <Header></Header>
       <Form className="mt-1">
-        <Form.Group>
-          <Form.Label>Search for a famous figure:</Form.Label>
-          <Form.Control id="authorInput" type="text" placeholder="e.g. Albert Einstein"></Form.Control>
+        <Form.Group as={Row}>
+          <Col md={7} className="mx-auto">
+          <Form.Control id="authorInput" className="mt-3 p-3" type="text" placeholder="Search for a famous figure e.g. Albert Einstein"></Form.Control>
+          </Col>
         </Form.Group>
-        <ButtonGroup className="d-flex">
+        <ButtonGroup className="d-flex w-25 mx-auto">
           <Button type="submit" onClick={getQuoteFromSpecificPerson}>Quote Search</Button>
           <Button type="button" onClick={getRandomQuote}>Random Quote</Button>
         </ButtonGroup>

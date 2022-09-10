@@ -40,3 +40,15 @@ button.btn{
   background-color: #ABE4FF;
   border-radius: 10px;
 }
+
+@media only screen and (min-width: 768px) {
+  .btn-group{
+  width: 25%;
+  }
+
+  
+button.btn{
+width: 25%;
+}
+
+}

@@ -104,7 +104,7 @@ function App() {
           <Form.Control id="authorInput" className="mt-3 p-3" type="text" placeholder="Search for a famous figure e.g. Albert Einstein"></Form.Control>
           </Col>
         </Form.Group>
-        <ButtonGroup className="d-flex w-25 mx-auto">
+        <ButtonGroup className="d-flex mx-auto my-2 g-4">
           <Button type="submit" onClick={getQuoteFromSpecificPerson}>Quote Search</Button>
           <Button type="button" onClick={getRandomQuote}>Random Quote</Button>
         </ButtonGroup>

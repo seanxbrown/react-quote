@@ -103,11 +103,9 @@ function App() {
         <Container fluid className="App">
         <NavbarComponent></NavbarComponent>
         <Routes>
-        <Route path="/react-quotes" element={<Search getRandomQuote={getRandomQuote} getQuoteFromSpecificPerson={getQuoteFromSpecificPerson}></Search>}></Route>
+        <Route path="/react-quotes" element={<Search closeWarning={closeWarning} saveQuote={saveQuote} currentQuote={currentQuote} displayWarningBox={displayWarningBox} warningMesage={warningMesage} getRandomQuote={getRandomQuote} getQuoteFromSpecificPerson={getQuoteFromSpecificPerson}></Search>}></Route>
         <Route path="/react-quotes/savedquotes" element={<SavedQuotes listOfSavedQuotes={quotesList} removeQuote={removeQuote}></SavedQuotes>}></Route>
         </Routes>
-        {displayWarningBox && <WarningBox message={warningMesage} closeWarning={closeWarning}></WarningBox> }
-        {currentQuote.length > 0 && <DisplayQuote author={currentQuote.author} quote={currentQuote.content} tags={currentQuote.tags} id={currentQuote._id} onSave={saveQuote}></DisplayQuote>}
       </Container>
     </BrowserRouter>
 

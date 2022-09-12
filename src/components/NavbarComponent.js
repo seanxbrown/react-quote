@@ -1,6 +1,7 @@
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
+import { Link } from "react-router-dom"
 
 
 const NavbarComponent = () => {
@@ -8,11 +9,11 @@ const NavbarComponent = () => {
     return (
         <Navbar expand="lg">
             <Container>
-                <Navbar.Brand> Inspiration Bank </Navbar.Brand>
+                <Link className="navbar-brand" to="/react-quotes"> Inspiration Bank </Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"></Navbar.Toggle>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link>Saved Quotes</Nav.Link>
+                        <Link className="nav-link" to="/react-quotes/savedquotes">Saved Quotes</Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

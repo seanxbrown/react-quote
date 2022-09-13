@@ -14,9 +14,13 @@ React Quotes (or Inspiration Bank) is a web application that allows users to sea
 
  API responses are displayed on screen and the user has an option to save the quote. When a quote is saved, it is saved to localstorage then retrieved immediately so it can be stored in state. Once in state, it is passed into the SavedQuotes component, which triggers a re-render.
 
- 
+ Technologies used include:
 
- ## Overview of functions
+ * React Router
+ * React Bootstrap
+ * React Hooks (State and Effect)
+ 
+  ## Overview of functions
 
  ### getRandomQuote
  Asynchronous function that calls the API endpoint that returns a random quote

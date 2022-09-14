@@ -3,11 +3,11 @@ import Carousel from "react-bootstrap/Carousel";
 
 export const SavedQuotes = ({listOfSavedQuotes, removeQuote}) => {
     return (
-        <Carousel className="mt-4">
+        <Carousel className="mt-5 mx-5">
             {listOfSavedQuotes.map(quote => {
                 return <Carousel.Item key={quote._id} id={quote._id} className="text-center p-5">
-                    <p>{quote.content}</p>
-                    <p>{quote.author}</p>
+                    <h2>{quote.content}</h2>
+                    <p className="text-center fs-4">{quote.author}</p>
                     {quote.tags.map(tag => {
                         return <p key={Date.Now * Math.random() * 1000}>{tag}</p>
                         })}

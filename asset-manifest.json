@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react-quotes/static/css/main.19839222.css",
-    "main.js": "/react-quotes/static/js/main.b70af3b3.js",
+    "main.js": "/react-quotes/static/js/main.13d3abcd.js",
     "index.html": "/react-quotes/index.html",
     "main.19839222.css.map": "/react-quotes/static/css/main.19839222.css.map",
-    "main.b70af3b3.js.map": "/react-quotes/static/js/main.b70af3b3.js.map"
+    "main.13d3abcd.js.map": "/react-quotes/static/js/main.13d3abcd.js.map"
   },
   "entrypoints": [
     "static/css/main.19839222.css",
-    "static/js/main.b70af3b3.js"
+    "static/js/main.13d3abcd.js"
   ]
 }

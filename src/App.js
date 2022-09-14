@@ -14,6 +14,7 @@ import Col from "react-bootstrap/Col";
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 import NavbarComponent from "./components/NavbarComponent";
 import Search from "./Search"
+import Authors from "./Authors"
 
 function App() {
   const [quotesList, setQuotesList] = useState([]);
@@ -118,6 +119,7 @@ function App() {
         <NavbarComponent></NavbarComponent>
         <Routes>
         <Route path="/react-quotes" element={<Search authors={authors} closeWarning={closeWarning} saveQuote={saveQuote} currentQuote={currentQuote} displayWarningBox={displayWarningBox} warningMesage={warningMesage} getRandomQuote={getRandomQuote} getQuoteFromSpecificPerson={getQuoteFromSpecificPerson}></Search>}></Route>
+        <Route path="/react-quotes/authors" element={<Authors authors={authors}></Authors>}></Route>
         <Route path="/react-quotes/savedquotes" element={<SavedQuotes listOfSavedQuotes={quotesList} removeQuote={removeQuote}></SavedQuotes>}></Route>
         </Routes>
       </Container>

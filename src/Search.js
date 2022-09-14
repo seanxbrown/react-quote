@@ -25,7 +25,7 @@ const Search = ({ authors, getQuoteFromSpecificPerson, getRandomQuote, currentQu
             </datalist>
             </Col>
             </Form.Group>
-            <ButtonGroup className="d-flex mx-auto my-4 g-4">
+            <ButtonGroup className="d-flex mx-auto my-4 g-4 justify-content-between">
             <Button type="submit" onClick={getQuoteFromSpecificPerson}>Quote Search</Button>
             <Button type="button" onClick={getRandomQuote}>Random Quote</Button>
             </ButtonGroup>

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom"
 const NavbarComponent = () => {
 
     return (
-        <Navbar expand="lg" id="navbarComponent">
+        <Navbar expand="lg" id="navbarComponent" className="border-bottom border-light">
             <Container>
                 <Link className="navbar-brand" to="/react-quotes"> Inspiration Bank </Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"></Navbar.Toggle>

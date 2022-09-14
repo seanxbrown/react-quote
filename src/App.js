@@ -14,7 +14,8 @@ import Col from "react-bootstrap/Col";
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 import NavbarComponent from "./components/NavbarComponent";
 import Search from "./Search"
-import Authors from "./Authors"
+import Authors from "./Authors";
+import Footer from "./components/Footer"
 
 function App() {
   const [quotesList, setQuotesList] = useState([]);
@@ -122,6 +123,7 @@ function App() {
         <Route path="/react-quotes/authors" element={<Authors authors={authors}></Authors>}></Route>
         <Route path="/react-quotes/savedquotes" element={<SavedQuotes listOfSavedQuotes={quotesList} removeQuote={removeQuote}></SavedQuotes>}></Route>
         </Routes>
+        <Footer></Footer>
       </Container>
     </BrowserRouter>
 

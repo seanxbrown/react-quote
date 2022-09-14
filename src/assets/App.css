@@ -1,19 +1,16 @@
+:root {
+  --background-colour: #BFE0FF;
+  --primary-colour: #fff;
+  --secondary-colour: #E6C795;
+  --tertiary-colour: #95BFE6;
+  --text-colour: #547899;
+}
+
 body {
-  background-color: rgba(244, 240, 240, 0.91);
+  background-color: var(--background-colour);
   color: var(--text-colour)
 }
 
-:root {
-  --background-colour: # ;
-  --primary-colour: #669AB3;
-  --secondary-colour: #FFD1C4;
-  --tertiary-colour: # ;
-  --text-colour: # ;
-}
-
-#header {
-  background-color: var(--primary-colour)
-}
 
 h1 {
   color: var(--text-colour)
@@ -23,13 +20,14 @@ button[type = submit], button[type = button] {
   background-color: var(--secondary-colour)
 }
 
-.carousel.slide {
-  background-color: var(--tertiary-colour);
-  opacity: 80%;
+button[type = submit]:hover, button[type = button]:hover {
+  background-color: #997945;
 }
 
+
 .carousel-item {
-  background-color: #ABE4FF;
+  background-color: var(--tertiary-colour);
+  border-radius: 10px;
 }
 
 button.btn{
@@ -37,8 +35,9 @@ button.btn{
 }
 
 #displayQuote {
-  background-color: #ABE4FF;
+  background-color: var(--tertiary-colour);
   border-radius: 10px;
+  color: var(--text-colour)
 }
 
 @media only screen and (min-width: 768px) {

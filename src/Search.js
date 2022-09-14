@@ -16,7 +16,7 @@ const Search = ({ authors, getQuoteFromSpecificPerson, getRandomQuote, currentQu
         <Form className="mt-5">
             <Form.Group as={Row}>
             <Col md={7} className="mx-auto">
-            <Form.Control id="datalist" list="datalistOptions" className="mt-3 p-3" type="text" placeholder="Search for a famous figure e.g. Albert Einstein"></Form.Control>
+            <Form.Control id="authorInput" list="datalistOptions" className="mt-3 p-3" type="text" placeholder="Search for a famous figure e.g. Albert Einstein"></Form.Control>
             <datalist id="datalistOptions">
                 {authors.map(author => {
                     return <option key={author.id} value={author.name}>{author.name}</option>

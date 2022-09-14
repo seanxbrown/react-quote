@@ -10,16 +10,22 @@ import {WarningBox} from "./components/WarningBox.js"
 
 
 
-const Search = ({ getQuoteFromSpecificPerson, getRandomQuote, currentQuote, displayWarningBox, warningMesage, closeWarning, saveQuote }) => {
+const Search = ({ authors, getQuoteFromSpecificPerson, getRandomQuote, currentQuote, displayWarningBox, warningMesage, closeWarning, saveQuote }) => {
     return (
         <>
-        <Form className="mt-1">
+        <Form className="mt-5">
             <Form.Group as={Row}>
             <Col md={7} className="mx-auto">
-            <Form.Control id="authorInput" className="mt-3 p-3" type="text" placeholder="Search for a famous figure e.g. Albert Einstein"></Form.Control>
+            <Form.Control id="datalist" list="datalistOptions" className="mt-3 p-3" type="text" placeholder="Search for a famous figure e.g. Albert Einstein"></Form.Control>
+            <datalist id="datalistOptions">
+                {authors.map(author => {
+                    return <option key={author.id} value={author.name}>{author.name}</option>
+
+                })}
+            </datalist>
             </Col>
             </Form.Group>
-            <ButtonGroup className="d-flex mx-auto my-2 g-4">
+            <ButtonGroup className="d-flex mx-auto my-4 g-4">
             <Button type="submit" onClick={getQuoteFromSpecificPerson}>Quote Search</Button>
             <Button type="button" onClick={getRandomQuote}>Random Quote</Button>
             </ButtonGroup>

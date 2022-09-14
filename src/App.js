@@ -20,6 +20,7 @@ function App() {
   const [currentQuote, setCurrentQuote] = useState({});
   const [warningMesage, setWarningMessage] = useState("");
   const [displayWarningBox, setDisplayWarningBox] = useState(false);
+  const [authors, setAuthors] = useState([])
 
   async function getRandomQuote() {
     const response = await fetch("https://api.quotable.io/random", {mode: "cors"});
@@ -98,12 +99,25 @@ function App() {
     }
   }, [])
 
+  useEffect (() => {
+
+    //Function to get all authors from API. Authors used to populate datalist and author section
+    async function getAllAuthors() {
+      const response = await fetch("https://quotable.io/authors?sortBy=quoteCount&order=desc&limit=150", {mode: "cors"});
+      const arrayOfAuthors = await response.json();
+      arrayOfAuthors.results.sort((a, b) => a["name"] > b["name"])
+      setAuthors(arrayOfAuthors.results)
+    }
+
+    getAllAuthors()
+  }, [])
+
   return (
     <BrowserRouter>
         <Container fluid className="App">
         <NavbarComponent></NavbarComponent>
         <Routes>
-        <Route path="/react-quotes" element={<Search closeWarning={closeWarning} saveQuote={saveQuote} currentQuote={currentQuote} displayWarningBox={displayWarningBox} warningMesage={warningMesage} getRandomQuote={getRandomQuote} getQuoteFromSpecificPerson={getQuoteFromSpecificPerson}></Search>}></Route>
+        <Route path="/react-quotes" element={<Search authors={authors} closeWarning={closeWarning} saveQuote={saveQuote} currentQuote={currentQuote} displayWarningBox={displayWarningBox} warningMesage={warningMesage} getRandomQuote={getRandomQuote} getQuoteFromSpecificPerson={getQuoteFromSpecificPerson}></Search>}></Route>
         <Route path="/react-quotes/savedquotes" element={<SavedQuotes listOfSavedQuotes={quotesList} removeQuote={removeQuote}></SavedQuotes>}></Route>
         </Routes>
       </Container>

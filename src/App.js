@@ -1,28 +1,20 @@
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./assets/App.css";
-import {Header} from "./components/Header.js";
-import {DisplayQuote} from "./components/DisplayQuote.js";
-import {SavedQuotes} from "./components/SavedQuotes.js";
-import {WarningBox} from "./components/WarningBox.js"
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+import { SavedQuotes } from "./components/SavedQuotes.js";
 import Container from "react-bootstrap/Container";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 import NavbarComponent from "./components/NavbarComponent";
-import Search from "./Search"
+import Search from "./Search";
 import Authors from "./Authors";
-import Footer from "./components/Footer"
+import Footer from "./components/Footer";
 
 function App() {
   const [quotesList, setQuotesList] = useState([]);
   const [currentQuote, setCurrentQuote] = useState({});
   const [warningMesage, setWarningMessage] = useState("");
   const [displayWarningBox, setDisplayWarningBox] = useState(false);
-  const [authors, setAuthors] = useState([])
+  const [authors, setAuthors] = useState([]);
 
   async function getRandomQuote() {
     const response = await fetch("https://api.quotable.io/random", {mode: "cors"});

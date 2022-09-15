@@ -1,6 +1,5 @@
 import Card from "react-bootstrap/Card"
 
-
 const AuthorCard = ({authors}) => {
 
     return (

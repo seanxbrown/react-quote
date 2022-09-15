@@ -1,6 +1,6 @@
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import AuthorCard from "./AuthorCard"
+import AuthorCard from "./AuthorCard";
 
 
 const Authors = ({ authors }) => {

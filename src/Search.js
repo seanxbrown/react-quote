@@ -3,7 +3,7 @@ import Col from "react-bootstrap/Col";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
-import { DisplayQuote } from "./components/DisplayQuote.js";
+import DisplayQuote from "./components/DisplayQuote.js";
 import { WarningBox } from "./components/WarningBox.js";
 
 const Search = ({ authors, getQuoteFromSpecificPerson, getRandomQuote, currentQuote, displayWarningBox, warningMesage, closeWarning, saveQuote }) => {

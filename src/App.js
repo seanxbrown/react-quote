@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./assets/App.css";
-import { SavedQuotes } from "./components/SavedQuotes.js";
+import SavedQuotes from "./components/SavedQuotes.js";
 import Container from "react-bootstrap/Container";
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 import NavbarComponent from "./components/NavbarComponent";

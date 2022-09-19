@@ -7,11 +7,11 @@ const AuthorCard = ({authors}) => {
      {authors.map(author => {
         return  <Card key={author.id}>
                     <Card.Body>
-                        <Card.Title>{author.name}</Card.Title>
-                        <Card.Subtitle className="mb-4 text-muted">{author.description}</Card.Subtitle>
-                        <Card.Text className="mb-4 lh-base"> {author.bio}</Card.Text>
+                        <Card.Title data-testid="author-name">{author.name}</Card.Title>
+                        <Card.Subtitle data-testid="author-desc" className="mb-4 text-muted">{author.description}</Card.Subtitle>
+                        <Card.Text data-testid="author-bio" className="mb-4 lh-base">{author.bio}</Card.Text>
                     </Card.Body>
-                    <Card.Footer><a href={author.link} target="_blank">Learn More</a></Card.Footer>
+                    <Card.Footer><a href={author.link} target="_blank" data-testid="author-link">Learn More</a></Card.Footer>
                 </Card>
      })}
      </>

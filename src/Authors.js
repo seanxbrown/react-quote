@@ -9,7 +9,6 @@ const Authors = ({ authors }) => {
             <Row md={4} className="g-2" data-testid="author-row">
                 <AuthorCard authors={authors}></AuthorCard>
             </Row>
-            <a href="#navbarComponent" className="my-5">Return to top</a>
         </Container>
     )
 }

@@ -11,7 +11,7 @@ const AuthorCard = ({authors}) => {
                         <Card.Subtitle data-testid="author-desc" className="mb-4 text-muted">{author.description}</Card.Subtitle>
                         <Card.Text data-testid="author-bio" className="mb-4 lh-base">{author.bio}</Card.Text>
                     </Card.Body>
-                    <Card.Footer><a href={author.link} target="_blank" data-testid="author-link">Learn More</a></Card.Footer>
+                    <Card.Footer><a href={author.link} target="_blank" rel="noreferrer" data-testid="author-link">Learn More</a></Card.Footer>
                 </Card>
      })}
      </>

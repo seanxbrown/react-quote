@@ -111,9 +111,9 @@ function App() {
         <Container fluid className="App">
         <NavbarComponent></NavbarComponent>
         <Routes>
-        <Route path="/react-quotes" element={<Search authors={authors} closeWarning={closeWarning} saveQuote={saveQuote} currentQuote={currentQuote} displayWarningBox={displayWarningBox} warningMesage={warningMesage} getRandomQuote={getRandomQuote} getQuoteFromSpecificPerson={getQuoteFromSpecificPerson}></Search>}></Route>
-        <Route path="/react-quotes/authors" element={<Authors authors={authors}></Authors>}></Route>
-        <Route path="/react-quotes/savedquotes" element={<SavedQuotes listOfSavedQuotes={quotesList} removeQuote={removeQuote}></SavedQuotes>}></Route>
+          <Route path="/react-quotes" element={<Search authors={authors} closeWarning={closeWarning} saveQuote={saveQuote} currentQuote={currentQuote} displayWarningBox={displayWarningBox} warningMesage={warningMesage} getRandomQuote={getRandomQuote} getQuoteFromSpecificPerson={getQuoteFromSpecificPerson}></Search>}></Route>
+          <Route path="/react-quotes/authors" element={<Authors authors={authors}></Authors>}></Route>
+          <Route path="/react-quotes/savedquotes" element={<SavedQuotes listOfSavedQuotes={quotesList} removeQuote={removeQuote}></SavedQuotes>}></Route>
         </Routes>
         <Footer></Footer>
       </Container>

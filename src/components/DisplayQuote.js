@@ -2,7 +2,7 @@ import Button from "react-bootstrap/Button";
 
 const DisplayQuote = ( { author, quote, tags, onSave } ) => {
     return (
-        <section id="displayQuote" className="text-center mt-5 p-5 shadow mx-5">
+        <section id="displayQuote" className="text-center mt-5 p-5 shadow mx-5" data-testid="displayQuote">
             <h2 id="QuoteInDisplayQuote" className="fst-italic" data-testid="displayQuote-quote">"{quote}"</h2>
             <p id="authorInDisplayQuote" className="text-center fs-4" data-testid="displayQuote-author">{author}</p>
             {tags.map(tag => {

@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import DisplayQuote from "./components/DisplayQuote.js";
 import { WarningBox } from "./components/WarningBox.js";
+import About from "./About"
 
 const Search = ({ authors, getQuoteFromSpecificPerson, getRandomQuote, currentQuote, displayWarningBox, warningMesage, closeWarning, saveQuote }) => {
     return (
@@ -32,6 +33,7 @@ const Search = ({ authors, getQuoteFromSpecificPerson, getRandomQuote, currentQu
         </Form>
         {displayWarningBox && <WarningBox message={warningMesage} closeWarning={closeWarning}></WarningBox> }
         {currentQuote.length > 0 && <DisplayQuote author={currentQuote.author} quote={currentQuote.content} tags={currentQuote.tags} id={currentQuote._id} onSave={saveQuote}></DisplayQuote>}
+        <About />
         </>
     )
 }

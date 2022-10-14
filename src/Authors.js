@@ -1,16 +1,18 @@
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import AuthorCard from "./AuthorCard";
+import Alert from "react-bootstrap/Alert";
 
 
 const Authors = ({ authors }) => {
-    return (
-        <Container className="mt-5">
+
+    return authors.length === 0 ? 
+        <Alert variant="danger">No authors available. Please refresh or try again later</Alert> 
+        : <Container className="mt-5">
             <Row md={4} className="g-2" data-testid="author-row">
-                <AuthorCard authors={authors}></AuthorCard>
+                <AuthorCard authors={authors} />
             </Row>
-        </Container>
-    )
+        </Container>   
 }
 
 export default Authors

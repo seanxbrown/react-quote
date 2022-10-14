@@ -97,10 +97,15 @@ function App() {
 
     //Function to get all authors from API. Authors used to populate datalist and author section
     async function getAllAuthors() {
-      const response = await fetch("https://quotable.io/authors?sortBy=quoteCount&order=desc&limit=150", {mode: "cors"});
-      const arrayOfAuthors = await response.json();
-      arrayOfAuthors.results.sort((a, b) => a["name"] > b["name"])
-      setAuthors(arrayOfAuthors.results)
+      try {
+        const response = await fetch("https://quotable.io/authors?sortBy=quoteCount&order=desc&limit=150", {mode: "cors"});
+        const arrayOfAuthors = await response.json();
+        arrayOfAuthors.results.sort((a, b) => a["name"] > b["name"])
+        setAuthors(arrayOfAuthors.results)
+      } catch(e) {
+        alert(e)
+      }
+      
     }
 
     getAllAuthors()
